@@ -18,6 +18,17 @@
   <nav>
 
     <div class="logo">HI I'm Khawla</div>
+    <div class="toggles">
+
+  <button id="langToggle" class="toggle-btn">
+    العربية
+  </button>
+
+  <button id="themeToggle" class="toggle-btn">
+    ☀️
+  </button>
+
+</div>
 
     <ul>
       <li><a href="#">Home</a></li>
@@ -206,6 +217,84 @@ I have several computer-related technical projects.
   </footer>
 
   <script>console.log("Portfolio Loaded Successfully ");</script>
+  <script>
+
+const themeToggle = document.getElementById("themeToggle");
+
+themeToggle.onclick = () => {
+  document.body.classList.toggle("light-mode");
+};
+
+
+
+const langToggle = document.getElementById("langToggle");
+
+let arabic = false;
+
+langToggle.onclick = () => {
+
+  arabic = !arabic;
+
+  if(arabic){
+
+    document.documentElement.lang = "ar";
+    document.body.style.direction = "rtl";
+
+    document.querySelector(".logo").innerHTML = "مرحبًا أنا خولة";
+
+    document.querySelector(".hero-text h3").innerHTML =
+    "طالبة علوم حاسب";
+
+    document.querySelector(".hero-text h1").innerHTML =
+    "خولة <br> المعلم";
+
+    document.querySelector(".hero-text p").innerHTML =
+    `
+    أنا طالبة علوم حاسب في جامعة الإمام عبدالرحمن بن فيصل.
+    <br><br>
+    لدي العديد من المشاريع التقنية المتعلقة بالحاسب.
+    <br><br>
+    شغوفة بتطوير المواقع وتجربة المستخدم.
+    `;
+
+    document.querySelector(".title").innerHTML =
+    "المشاريع";
+
+    langToggle.innerHTML = "English";
+
+  }else{
+
+    document.documentElement.lang = "en";
+    document.body.style.direction = "ltr";
+
+    document.querySelector(".logo").innerHTML =
+    "HI I'm Khawla";
+
+    document.querySelector(".hero-text h3").innerHTML =
+    "Computer Science Student";
+
+    document.querySelector(".hero-text h1").innerHTML =
+    "Khawla <br> Almoalem";
+
+    document.querySelector(".hero-text p").innerHTML =
+    `
+    I am a computer science student at Imam Abdulrahman bin Faisal University.
+    <br><br>
+    I have several computer-related technical projects.
+    <br><br>
+    I am passionate about web development.
+    `;
+
+    document.querySelector(".title").innerHTML =
+    "Featured Projects";
+
+    langToggle.innerHTML = "العربية";
+
+  }
+
+};
+
+</script>
 
 </body>
 </html>
