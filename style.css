@@ -10,6 +10,7 @@ body{
   background:#050505;
   color:white;
   overflow-x:hidden;
+  transition:.4s;
 }
 
 body::before{
@@ -107,6 +108,7 @@ nav ul li a:hover{
 .buttons{
   display:flex;
   gap:20px;
+  flex-wrap:wrap;
 }
 
 .btn{
@@ -210,6 +212,15 @@ section{
   margin-bottom:20px;
 }
 
+.project-link{
+  text-decoration:none;
+  color:white;
+}
+
+.project-link:hover{
+  color:#c084fc;
+}
+
 .tags{
   display:flex;
   flex-wrap:wrap;
@@ -270,34 +281,12 @@ footer{
   color:#777;
 }
 
-@media(max-width:950px){
-
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
-
-  .hero-text h1{
-    font-size:55px;
-  }
-
-  nav ul{
-    display:none;
-  }
-
-  .buttons{
-    justify-content:center;
-  }
-
-  .circle{
-    width:320px;
-    height:320px;
-  }
-  /* TOGGLES */
+/* TOGGLES */
 
 .toggles{
   display:flex;
   gap:10px;
+  align-items:center;
 }
 
 .toggle-btn{
@@ -308,6 +297,7 @@ footer{
   border-radius:30px;
   cursor:pointer;
   transition:.3s;
+  font-family:'Poppins',sans-serif;
 }
 
 .toggle-btn:hover{
@@ -349,5 +339,38 @@ footer{
 .light-mode footer{
   color:#555;
 }
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text h1{
+    font-size:55px;
+  }
+
+  nav{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  nav ul{
+    gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .buttons{
+    justify-content:center;
+  }
+
+  .circle{
+    width:320px;
+    height:320px;
+  }
 
 }
